@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper]{report}
 \usepackage{xetexko}
 \usepackage{siunitx}
+\usepackage[scale=0.75,twoside,bindingoffset=5mm,a4paper]{geometry}
 \sisetup{inter-unit-product =$\cdot$}
 
 \title{물리 노트\\(생각하며 배우는 대학물리학 - 이기영 지음)}
@@ -70,7 +71,8 @@
 	$a=\frac{1}{m}F$\\
 	$\rightarrow$ m : 자신의 운동상태가 변하는 것에 저항하는 물체 고유의 특성\\
 	$\rightarrow$ 질량(mass)이라고 이름 붙임 (by 뉴턴), `관성의 척도'라고도 한다.\\
-	힘의 단위 $\SI{1}{\newton} = \SI{1}{kg.m/s^{2}}$\\ % 에러 발생
+	\footnote{(siunitx 패키지 사용해서 단위 입력시 에러 발생)}
+	% 힘의 단위 $\SI{1}{\newton} = \SI{1}{kg.m/s^{2}}$\\ % 에러 발생
 	
 	\section{무게와 질량}
 	
@@ -149,5 +151,36 @@
 	
 	\section{일(work)}
 	
+	힘을 작용해 이동시키는 것\\
+	힘 $\vec{F}$가 한 일 $W_f = \vec{F} \cdot \vec{d}$ ($\vec{d}$ : 크기가 d인 변위 벡터)\\
+	$\rightarrow$ `일을 할 수 있게 하는 것'을 에너지로 정의할 수 있다.\\
+	$\rightarrow$ 에너지의 크기는 일의 양과 같다.\\
+	변화하는 힘에 의한 일 $W = \int_A^B F(x) dx$ 또는 $W = \int_A^B \vec{F} \cdot d\vec{r}$\\
+	일의 단위 1J = 1N$\cdot$m
+	
+	\section{일의 경로 무관성과 일률}
+	
+	경사면의 각도가 $\theta$ 인 경우,\\
+	$W_{경사면} = mg \sin \theta \cdot d = mg(d \cdot \sin \theta) = mgH = W_{수직}$\\
+	일률(Power) $P(t) = \frac{dW}{dt} = \frac{dW}{dx} \cdot \frac{dx}{dt} = Fv$\\
+	일률의 단위 1W = 1J/s, 1hp = 746W, 1kWh = 1kW로 1시간동안 사용한 전력량
+	
+	\section{위치에너지와 운동에너지}
+	
+	위치 형태로 저장되는 에너지 (ex 도르래에 매달린 두 물체) : 위치에너지\\
+	중력위치에너지, 탄성력위치에너지, 전기력위치에너지\\
+	\\
+	움직이는 물체는 얼마만큼의 일을 할 수 있는가? ( = 얼마만큼의 에너지가 있는가?)\\
+	높이 H에서 중력가속도 g로 자유낙하하는 물체가 바닥에 도달하는데 걸리는 시간\\
+	$H = 시간-속도 그래프 아래의 삼각형 면적 = \frac{1}{2} \cdot t \cdot gt = \frac{g}{2} t^2$
+	$t = \sqrt{\frac{2H}{g}}$\\
+	바닥에 도달한 물체의 빠르기\\
+	$v_0 = gt = g \sqrt{\frac{2H}{g}} = \sqrt{2gH}$\\
+	$H = \frac{{v_0}^2}{2g}$\\
+	에너지의 양 $mgH = mg \cdot \frac{{v_0}^2}{2g} = \frac{1}{2} m {v_0}^2$
+	\footnote{이런 식의 유도는 에너지 보존 법칙을 전제로 한 논리인가?}\\
+	$\rightarrow$ 빠르기 v로 운동하는 질량이 m인 물체는 $\frac{1}{2} m {v_0}^2$ 크기의 에너지를 갖고 있다.\\
+	$\rightarrow$ 운동하는 물체가 가진 에너지 : 운동에너지 (위치에너지와 달리 언제나 0 이상이다.)\\
+	위치에너지의 양이 기준 위치의 높이에 따라 달라지듯이, 운동에너지의 양도 관측자(기준계)에 따라 다른 값을 갖는다. (물체의 속도로 관측자에 따라 달라지는 `상대 속도'를 사용)
 	
 \end{document}
