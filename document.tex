@@ -2,6 +2,10 @@
 \usepackage{xetexko}
 \usepackage{siunitx}
 \usepackage[scale=0.75,twoside,bindingoffset=5mm,a4paper]{geometry}
+\usepackage{xcolor}
+\usepackage{amssymb}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}
 \sisetup{inter-unit-product =$\cdot$}
 
 \title{물리 노트\\(생각하며 배우는 대학물리학 - 이기영 지음)}
@@ -172,15 +176,57 @@
 	\\
 	움직이는 물체는 얼마만큼의 일을 할 수 있는가? ( = 얼마만큼의 에너지가 있는가?)\\
 	높이 H에서 중력가속도 g로 자유낙하하는 물체가 바닥에 도달하는데 걸리는 시간\\
-	$H = 시간-속도 그래프 아래의 삼각형 면적 = \frac{1}{2} \cdot t \cdot gt = \frac{g}{2} t^2$
+	$H = 시간-속도\,그래프\,아래의\,삼각형\,면적 = \frac{1}{2} \cdot t \cdot gt = \frac{g}{2} t^2$
 	$t = \sqrt{\frac{2H}{g}}$\\
 	바닥에 도달한 물체의 빠르기\\
 	$v_0 = gt = g \sqrt{\frac{2H}{g}} = \sqrt{2gH}$\\
 	$H = \frac{{v_0}^2}{2g}$\\
-	에너지의 양 $mgH = mg \cdot \frac{{v_0}^2}{2g} = \frac{1}{2} m {v_0}^2$
-	\footnote{이런 식의 유도는 에너지 보존 법칙을 전제로 한 논리인가?}\\
-	$\rightarrow$ 빠르기 v로 운동하는 질량이 m인 물체는 $\frac{1}{2} m {v_0}^2$ 크기의 에너지를 갖고 있다.\\
+	에너지의 양 $mgH =\footnote{이런 식의 유도는 에너지 보존 법칙을 전제로 한 논리인가?} mg \cdot \frac{{v_0}^2}{2g} = \frac{1}{2} m {v_0}^2$\\
+	$\rightarrow$ 빠르기 v로 운동하는 질량이 m인 물체는 $\frac{1}{2} m {v_0}^2$ 크기의 에너지를 갖고 있다.
+	\footnote{일반화 된 유도과정 추가 할 것}\\
 	$\rightarrow$ 운동하는 물체가 가진 에너지 : 운동에너지 (위치에너지와 달리 언제나 0 이상이다.)\\
-	위치에너지의 양이 기준 위치의 높이에 따라 달라지듯이, 운동에너지의 양도 관측자(기준계)에 따라 다른 값을 갖는다. (물체의 속도로 관측자에 따라 달라지는 `상대 속도'를 사용)
+	위치에너지의 양이 기준 위치의 높이에 따라 달라지듯이, 운동에너지의 양도 관측자(기준계)에 따라 다른 값을 갖는다. (물체의 속도로 관측자에 따라 달라지는 `상대 속도'를 사용)\\
+	\\
+	어떤 속도로 운동하는 물체의 운동에너지의 양은 그 물체에 작용한 모든 힘의 합력이 한 일의 양으로 해석할 수 있다.\\
+	$W_{F_0} = F_0 d = m a_0 d$\\
+	$F_0$ : 합력, $d$ : 운동방향으로의 이동거리\\
+	처음 속도 $v_0$, 일정한 가속도 $a_0$로 $t$ 시간만큼 이동한 거리 $d$\\
+	$= 시간-속도\,그래프\,아래의\,사다리꼴\,면적 = \left\lbrace v_0 + \left( v_0 + a_0 t \right) \right\rbrace \cdot t \cdot \frac{1}{2} = v_0 t + \frac{a_0}{2} t^2$\\
+	$2 a_0 d = 2 a_0 v_0 t + {a_0}^2 t^2 = {v_0}^2 + {a_0}^2 t^2 - {v_0}^2 = {\left( v_0 + a_0 t \right)}^2 - {v_0}^2 = v^2 - {v_0}^2$\\
+	$W_{F_0} = m a_0 d = \frac{m}{2} \cdot 2 a_0 d = \frac{m}{2} \left( v^2 - {v_0}^2 \right) = \frac{1}{2} m v^2 - \frac{1}{2} m {v_0}^2 = K - K_0 = \Delta K$\\
+	\textbf{일-에너지 정리} : 물체에 작용한 합력이 한 일의 결과는 운동에너지의 변화량과 같다. (합력이 일정하지 않아도 성립한다.\footnote{일반화 된 유도과정 추가 할 것})
+	
+	\section{보존력과 위치에너지}
+	
+	같은 위치면 같은 운동에너지를 갖는 운동이 되는 힘을 \textbf{보존력}(conservative force)이라고 한다.\footnote{문장이 이상하다. 더 잘 정리 된 정의 찾아볼것.}\\
+	ex) 중력장에서의 중력\footnote{보존력은 장(field)을 매개로 한 힘의 특성인가? 보존력이 아닌 힘은 어떤것들인가?}\\
+	아무런 힘을 받지 않는 물체는 속도가 일정하므로 운동에너지도 일정하다.\\
+	중력을 받는다면 일정한 높이에서는 운동에너지가 항상 일정하다. (물체를 공중으로 던졌을 때를 생각하자.)\\
+	$\rightarrow$ 고정 된 높이에 대해, $K_{일정} + U(높이) = 일정 \quad(U\,:\,위치에너지\,함수)$\\
+	$\rightarrow$ $\Delta K + \Delta U = 0$ 또는 $dK + dU = 0$\\
+	\\
+	$F$ : 중력, $\Delta x$ : 물체의 변위일때, $W_{합력} = F \Delta x = \Delta K$ (일-에너지 정리)\\
+	$\rightarrow \Delta K = F \Delta x$ 또는 $dK = F dx$\\
+	$F$가 $x$의 함수라면 (위치에 따라 힘이 변화한다면) $dk + dU = 0$이므로 $dU = -dK = -F(x)dx$\\
+	$\therefore F(x) = - \frac{dU(x)}{dx}$\\
+	$\therefore U(B) = U(A) + \int_{A}^{B} \left[ - \footnotemark F(x) \right] dx$ : 두 위치 A(낮은곳), B(높은곳)간의 위치에너지 관계
+	\footnotetext{낮은곳에서 높은곳으로 물체를 들어올리려면, 중력과 반대 방향으로 힘을 작용해야 한다.}\\
+	\\
+	운동에너지와 위치에너지의 합을 `역학적에너지'라고 한다.\\
+	보존력\footnote{중력, 전기력처럼 밀거나 당길수만 있는 힘은 모두 보존력임을 보일 수 있다.}을 받는 운동에서는 역학적에너지가 일정하다. $\rightarrow$ \textbf{역학적에너지 보존 법칙}\\
+	\\
+	3차원 공간에서의 위치에너지\\
+	보존력 $\vec{F} = - \nabla \vec{U}(\vec{F})$\\
+	$\vec{U}(B) - \vec{U}(A) = - \int_{B}^{A} \vec{F} \cdot d \vec{r}$\\
+	$\vec{F} = \hat{r} F(\vec{r}), \quad d \vec{r} = \hat{r} dr$\\
+	$\rightarrow U(r_2) - U(r_1) = \int_{r_1}^{r_2} \left[ -F(r) \right] dr$
+	
+	\section{질량에너지}
+	
+	\section{천체의 중력위치에너지}
+	
+	탈출속도
+	
+	\section{탄성위치에너지}
 	
 \end{document}
